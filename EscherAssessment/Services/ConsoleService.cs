@@ -34,7 +34,7 @@ namespace EscherAssessment.Services
 
         public bool PromptRestart()
         {
-            Console.Write("Would you like to enter information for another person? (y/n): ");
+            Console.Write("\nWould you like to enter information for another person? (y/n): ");
             var userInput = Console.ReadLine();
             return userInput.ToLower() == "y";
         }

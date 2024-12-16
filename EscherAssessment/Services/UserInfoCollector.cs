@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace EscherAssessment.Services
@@ -62,14 +63,39 @@ namespace EscherAssessment.Services
 
         private string GetFirstName()
         {
-            _consoleService.Write("Enter first name: ");
-            return _consoleService.ReadLine();
+            return GetName("Enter first name: ");   
         }
 
         private string GetSurname()
         {
-            _consoleService.Write("Enter surname: ");
-            return _consoleService.ReadLine();
+            return GetName("Enter surname: ");
+        }
+
+        private string GetName(string message)
+        {
+            string name;
+
+            while (true)
+            {
+                _consoleService.Write(message);
+                name = _consoleService.ReadLine();
+
+                if (string.IsNullOrEmpty(name))
+                {
+                    _consoleService.WriteLine("Name must contain at least one character. Please try again.");
+                    continue;
+                }
+
+                if (Regex.IsMatch(name, @"[^a-zA-Z\s]"))
+                {
+                    _consoleService.WriteLine("Invalid name. Please try again.");
+                    continue;
+                }
+
+                break;
+            }
+
+            return name;
         }
 
         private DateTime GetDateOfBirth()
@@ -81,6 +107,12 @@ namespace EscherAssessment.Services
                 _consoleService.Write("Enter date of birth (MM/dd/yyyy): ");
                 var date = _consoleService.ReadLine();
                 bool success = DateTime.TryParseExact(date, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out dateOfBirth);
+
+                if (DateTime.Now < dateOfBirth)
+                {
+                    _consoleService.WriteLine("Please enter a valid birthday.");
+                    continue;
+                }
 
                 if (success)
                 {
