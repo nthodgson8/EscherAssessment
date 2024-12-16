@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscherAssessment", "EscherAssessment\EscherAssessment.csproj", "{01D650E6-070A-434D-BAC4-482A1B685E7C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscherAssessment.Tests", "EscherAssessment.Tests\EscherAssessment.Tests.csproj", "{B886C449-F51B-49E4-96C6-A0E9E0A4DCA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01D650E6-070A-434D-BAC4-482A1B685E7C} = {01D650E6-070A-434D-BAC4-482A1B685E7C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01D650E6-070A-434D-BAC4-482A1B685E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D650E6-070A-434D-BAC4-482A1B685E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D650E6-070A-434D-BAC4-482A1B685E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D650E6-070A-434D-BAC4-482A1B685E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B886C449-F51B-49E4-96C6-A0E9E0A4DCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B886C449-F51B-49E4-96C6-A0E9E0A4DCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B886C449-F51B-49E4-96C6-A0E9E0A4DCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B886C449-F51B-49E4-96C6-A0E9E0A4DCA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {943CB9D3-0B4D-4CB3-86BD-EAFEB075D748}
+	EndGlobalSection
+EndGlobal
